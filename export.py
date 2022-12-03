@@ -24,8 +24,8 @@ from utils.torch_utils import select_device
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'mobile_lite.pth', help='model.pt path(s)')
-    parser.add_argument('--cfg', type=str, default=ROOT / 'models/mobile_lite.yaml', help='model.yaml path')
+    parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'mobile_nano.pth', help='model.pt path(s)')
+    parser.add_argument('--cfg', type=str, default=ROOT / 'models/mobile_nano.yaml', help='model.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[240, 320], help='image (h,w)')
     parser.add_argument('--batch-size', type=int, default=1, help='batch size')
     parser.add_argument('--device', default='cpu', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
