@@ -35,7 +35,7 @@ WORLD_SIZE = int(os.getenv('WORLD_SIZE', 1))
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str, default=ROOT / 'mobile_nano.pth', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default=ROOT / 'model/mobile_nano.yaml', help='model.yaml path')
+    parser.add_argument('--cfg', type=str, default=ROOT / 'models/mobile_nano.yaml', help='model.yaml path')
     parser.add_argument('--data', type=str, default=ROOT / 'data/widerface.yaml', help='dataset.yaml path')
     parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch.yaml', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
