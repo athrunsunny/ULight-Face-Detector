@@ -15,14 +15,14 @@ backbone:
    [ -1, 1, DWConvBlock, [ 32, 3, 1 ] ],
 
    [ -1, 1, DWConvBlock, [ 64, 3, 2 ] ], # conv5
-   [ -1, 1, DWConvBlock, [ 64, 3, 1 ] ],
+   [ -1, 1, DWConvBlock, [ 64, 3, 1 ] ], # P1           
 
    [ -1, 1, DWConvBlock, [ 96, 3, 2 ] ], # conv7
-   [ -1, 1, DWConvBlock, [ 96, 3, 1 ] ],
+   [ -1, 1, DWConvBlock, [ 96, 3, 1 ] ], # P2
 
    [ -1, 1, DWConvBlock, [ 128, 3, 2 ] ], # conv9
-   [ -1, 1, DWConvBlock, [ 128, 3, 1 ] ],# conv10
-   [ -1, 1, DPConv, [ 64, 1, 1 ] ], # conv11
+   [ -1, 1, DWConvBlock, [ 128, 3, 1 ] ],# conv10 # P3 
+   [ -1, 1, DPConv, [ 64, 1, 1 ] ], # conv11 # P4 
   ]
 
 # head
