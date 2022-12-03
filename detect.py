@@ -27,7 +27,7 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'mobile_nano.pth', help='model path(s)')
     parser.add_argument('--source', type=str, default=ROOT / 'imgs', help='file/dir/URL/glob, 0 for webcam')
-    parser.add_argument('--cfg', type=str, default=ROOT / 'model/mobile_nano.yaml', help='model.yaml path')
+    parser.add_argument('--cfg', type=str, default=ROOT / 'models/mobile_nano.yaml', help='model.yaml path')
     parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch.yaml', help='hyperparameters path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[320, 240],
                         help='inference size w,h')
