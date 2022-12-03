@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python train.py --batch-size 16 --epochs 300 --weights '' --optimizer SGD
 ```
 
-## prepare datasets
+#### prepare datasets
 
 open data/widerface.yaml change train & val path 
 
