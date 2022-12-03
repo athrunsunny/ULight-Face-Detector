@@ -9,7 +9,7 @@ import torch
 import torch.nn.functional as F
 import yaml
 
-from model.model import Model
+from models.model import Model
 from utils.box_utils import PriorBox, nms, convert_locations_to_boxes, center_form_to_corner_form
 from utils.dataloader import LoadImages
 from utils.general import colorstr, LOGGER, check_yaml, print_args, increment_path, check_img_size, Profile
