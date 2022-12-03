@@ -9,7 +9,7 @@ Model|model file size（MB）
 ------|--------
 Official Retinaface-Mobilenet-0.25 (Mxnet) | 1.68
 Ultra-Light-Fast-Generic-Face-Detector-1MB(version-slim)| **1.04**
-facelite(our)| **0.5** 
+mobile_lite(our)| **0.5** 
 
 ## Generate VOC format training data set and training process
 
@@ -32,14 +32,14 @@ python train.py --batch-size 16 --epochs 300 --weights '' --optimizer SGD
 
 ### detect
 ```Shell
-python detect.py --weights face_lite.pth 
+python detect.py --weights mobile_lite.pth 
 ```
 
 ### export
 ```Shell
-python export.py --weights face_lite.pth 
+python export.py --weights mobile_lite.pth 
 ```
 
 ## Pretrained model
 
-Pretrained model: [Baidu cloud disk (extraction code: cz51)](https://pan.baidu.com/s/1L8Ut0QTTAPPPmV2qG6XhEg)
+Pretrained model: 
