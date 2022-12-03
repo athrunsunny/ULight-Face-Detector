@@ -1,0 +1,48 @@
+
+# Parameters
+nc: 1  # number of classes
+depth_multiple: 1  # model depth multiple
+width_multiple: 1  # layer channel multiple
+imgsz:
+  320
+# backbone
+backbone:
+  # [from, number, module, args]
+  [[ -1, 1, Conv, [ 16, 3, 2 ] ], # conv1
+   [ -1, 1, DWConvBlock, [ 32, 3, 1 ] ],
+
+   [ -1, 1, DWConvBlock, [ 32, 3, 2 ] ], # conv3
+   [ -1, 1, DWConvBlock, [ 32, 3, 1 ] ],
+
+   [ -1, 1, DWConvBlock, [ 64, 3, 2 ] ], # conv5
+   [ -1, 1, DWConvBlock, [ 64, 3, 1 ] ],
+   [ -1, 1, DWConvBlock, [ 64, 3, 1 ] ],
+   [ -1, 1, DWConvBlock, [ 64, 3, 1 ] ], # conv8 P1
+
+   [ -1, 1, DWConvBlock, [ 128, 3, 2 ] ], # conv9
+   [ -1, 1, DWConvBlock, [ 128, 3, 1 ] ],
+   [ -1, 1, DWConvBlock, [ 128, 3, 1 ] ],# conv11 P2
+
+   [ -1, 1, DWConvBlock, [ 256, 3, 2 ] ], # conv12
+   [ -1, 1, DWConvBlock, [ 256, 3, 1 ] ],# conv13 P3
+   [ -1, 1, DPConv, [ 64, 1, 1 ] ], # conv14 P4
+  ]
+
+# head
+head:
+  # bbox_regressions
+  [[ 7, 1, RConv, [ 12, 3, 1 ] ],
+   [ 10, 1, RConv, [ 8, 3, 1 ] ],
+   [ 12, 1, RConv, [ 8, 3, 1 ] ],
+   [ 13, 1, SimpleConv, [ 12, 3, 1 ] ],
+   [[-4, -3, -2, -1], 1, Concat, [1, 4]], # 18
+
+   #classifications
+   [ 7, 1, RConv, [ 6, 3, 1 ] ],
+   [ 10, 1, RConv, [ 4, 3, 1 ] ],
+   [ 12, 1, RConv, [ 4, 3, 1 ] ],
+   [ 13, 1, SimpleConv, [ 6, 3, 1 ] ],
+   [[-4, -3, -2, -1], 1, Concat, [1, 2]], # 23
+
+   [[18,  23], 1, Detect, [nc, imgsz]],  # Detect
+  ]
