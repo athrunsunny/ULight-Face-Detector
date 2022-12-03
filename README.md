@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ### train
 ```Shell
-python train.py --batch-size 16 --epochs 300 --weights '' --optimizer SGD
+python train.py --batch-size 16 --epochs 300 --weights '' --optimizer SGD --imgsz 320 (or 640)
 ```
 
 #### prepare datasets
