@@ -9,7 +9,7 @@ import onnxsim
 import pandas as pd
 import torch
 
-from model.model import Model
+from models.model import Model
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # root directory
