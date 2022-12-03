@@ -11,7 +11,7 @@ import yaml
 from torch.optim import lr_scheduler
 from tqdm import tqdm
 
-from model.model import Model
+from models.model import Model
 from utils.box_utils import PriorBox
 from utils.dataloader import load_data
 from utils.general import init_seeds, print_args, check_file, get_latest_run, check_yaml, increment_path, LOGGER, \
