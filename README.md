@@ -46,4 +46,4 @@ python export.py --weights mobile_lite.pth
 
 ## Pretrained model
 
-Pretrained model: 
+Pretrained model: [Baidu cloud disk (extraction code: xagi)](https://pan.baidu.com/s/1IE92DusuINQC8RZ9NZ11QQ)
